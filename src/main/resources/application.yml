@@ -1,6 +1,6 @@
 spring:
   couchbase:
-    connection-string: couchbase://127.0.0.1
-    username: Administrator
-    password: Password
-    bucket: todoapp
+    connection-string: ${CB_URL:couchbase://127.0.0.1}
+    username: ${CB_USERNAME:Administrator}
+    password: ${CB_PASSWORD:Password}
+    bucket: ${CB_BUCKET:todoapp}

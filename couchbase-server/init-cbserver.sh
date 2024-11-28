@@ -39,7 +39,7 @@ if ! [ -f "$FILE" ]; then
 
   sleep 2s 
 
-  # used to auto create the sync gateway user based on environment variables  
+  # used to auto create the sync gateway user based on environment variables
   # https://docs.couchbase.com/server/current/cli/cbcli/couchbase-cli-user-manage.html#examples
 
   /opt/couchbase/bin/couchbase-cli user-manage \
@@ -51,25 +51,6 @@ if ! [ -f "$FILE" ]; then
   --rbac-password $COUCHBASE_RBAC_PASSWORD \
   --roles mobile_sync_gateway[*] \
   --auth-domain local
-
-#  sleep 2s
-#
-#  # create indexes using the QUERY REST API
-#  /opt/couchbase/bin/curl -v http://localhost:8093/query/service \
-#  -u $COUCHBASE_ADMINISTRATOR_USERNAME:$COUCHBASE_ADMINISTRATOR_PASSWORD \
-#  -d 'statement=CREATE INDEX idx_projects_team on projects(team)'
-#
-#  sleep 2s
-#
-#  /opt/couchbase/bin/curl -v http://localhost:8093/query/service \
-#  -u $COUCHBASE_ADMINISTRATOR_USERNAME:$COUCHBASE_ADMINISTRATOR_PASSWORD \
-#  -d 'statement=CREATE INDEX idx_projects_type on projects(type)'
-#
-#  sleep 2s
-#
-#  /opt/couchbase/bin/curl -v http://localhost:8093/query/service \
-#  -u $COUCHBASE_ADMINISTRATOR_USERNAME:$COUCHBASE_ADMINISTRATOR_PASSWORD \
-#  -d 'statement=CREATE INDEX idx_projects_projectId on projects(projectId)'
 
   sleep 2s
 
