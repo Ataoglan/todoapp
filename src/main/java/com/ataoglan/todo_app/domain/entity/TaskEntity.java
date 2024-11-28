@@ -3,8 +3,10 @@ package com.ataoglan.todo_app.domain.entity;
 import com.ataoglan.todo_app.domain.enums.TaskStatusEnum;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,6 +18,8 @@ import java.time.LocalDateTime;
 @Data
 @Document
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaskEntity {
 
     @Id
