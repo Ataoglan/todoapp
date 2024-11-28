@@ -26,6 +26,8 @@ public class UserEntity {
     private String password;
     @Field
     private String email;
+    @Field
+    private Boolean enabled;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;

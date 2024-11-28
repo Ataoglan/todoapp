@@ -35,7 +35,9 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(request.password()));
         user.setEmail(request.email());
         user.setRole(request.userRole());
-        UserEntity userEntity = userRepository.save(user);
+        user.setEnabled(true);
+
+        userRepository.save(user);
 
         return "User registered successfully!";
     }
